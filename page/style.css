@@ -1,0 +1,60 @@
+.main-navbar
+{
+	width: 100%;
+}
+
+.main-content
+{
+	display: block;
+	overflow: hidden;
+}
+
+/* Typewriting: https://css-tricks.com/snippets/css/typewriter-effect/ */
+/*
+.typewriter
+{
+	width: 3em;
+	overflow: hidden;
+	border-right: .15em solid black;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation:
+		typing 6s steps(6, end),
+		blink-cursor 800ms step-end infinite;
+}
+
+@keyframes typing
+{
+	from { width: 0; }
+	to { width: 3em; }
+}
+
+@keyframes blink-cursor
+{
+	from, to { border-color: rgba(255, 255, 255, .75); }
+	50% { border-color: transparent; }
+}
+*/
+
+.line-1{
+    width: 19em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(0,0,0,.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 44s steps(44),
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 19em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(0,0,0,.75);}
+  to{border-right-color: transparent;}
+}
