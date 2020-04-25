@@ -1,2 +1,5 @@
 # Local Files
 Project-Local/
+build.bat
+runServer.bat
+stopServer.bat

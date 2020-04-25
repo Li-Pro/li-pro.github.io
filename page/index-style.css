@@ -1,0 +1,34 @@
+.main-navbar
+{
+	width: 100%;
+}
+
+.main-content
+{
+	display: block;
+	overflow: hidden;
+}
+
+/* Typewriting: https://css-tricks.com/snippets/css/typewriter-effect/ */
+.typewriter
+{
+	overflow: hidden;
+	border-right: .15em solid black;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation:
+		typing 3.5s steps(5, end),
+		blink-cursor 1s step-end infinite;
+}
+
+@keyframes typing
+{
+	from { width: 0 }
+	to { width: 100% }
+}
+
+@keyframes blink-cursor
+{
+	from, to { border-color: transparent }
+	50% { border-color: black }
+}
