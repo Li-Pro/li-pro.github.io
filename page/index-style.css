@@ -1,10 +1,31 @@
 .main-navbar
 {
-	width: 100%;
+	min-height: 10%;
+	max-height: 10%;
 }
 
-.main-content
+.lipro-code
 {
-	display: block;
-	overflow: hidden;
+	font-family: consolas;
+	font-size: 24px;
+	padding-top: 5%;
+}
+
+.coding-cursor
+{
+	padding: 1px;
+	border-right: .1em solid black;
+}
+
+.code-cursor
+{
+	padding: 1px;
+	border-right: .1em solid black;
+	animation: blink-cursor .5s step-end infinite;
+}
+
+@keyframes blink-cursor
+{
+	from, to { border-color: transparent; }
+	50% { border-color: black; }
 }
