@@ -14,12 +14,14 @@ function escapeHtml(unsafe)
  }
 
 /* The typewriter effect */
-function doTypeWriting(arr, arri, arrj, ele, prf='')
+function doTypeWriting(arr, arri, arrj, ele, linesprf='', prf='')
 {
 	var len = arr.length;
 	if (arri >= len)
 	{
-		ele.innerHTML = prf + '<span class="code-cursor"></span>';
+		ele.innerHTML = linesprf + '<span class="code-cursor"></span>';
+		
+		// hljs.highlightBlock()
 		return;
 	}
 	
@@ -28,17 +30,17 @@ function doTypeWriting(arr, arri, arrj, ele, prf='')
 	
 	if (arrj >= lenx)
 	{
-		prf += ' <br>';
-		ele.innerHTML = prf + '<span class="coding-cursor"></span>';
+		// prf += ' <br>';
+		ele.innerHTML = linesprf + hljs.highlight('cpp', prf).value + ' <br>' + '<span class="coding-cursor"></span>';
 		
-		setTimeout(()=>{ doTypeWriting(arr, arri+1, 0, ele, prf); }, 50);
+		setTimeout(()=>{ doTypeWriting(arr, arri+1, 0, ele, linesprf + hljs.highlight('cpp', prf).value + ' <br>', ''); }, 50);
 	}
 	else
 	{
-		prf += escapeHtml(arrx[arrj]);
-		ele.innerHTML = prf + '<span class="coding-cursor"></span>';
+		prf += arrx[arrj]; // escapeHtml(arrx[arrj]);
+		ele.innerHTML = linesprf + hljs.highlight('cpp', prf).value + '<span class="coding-cursor"></span>';
 		
-		setTimeout(()=>{ doTypeWriting(arr, arri, arrj+1, ele, prf); }, 50);
+		setTimeout(()=>{ doTypeWriting(arr, arri, arrj+1, ele, linesprf, prf); }, 50);
 	}
 }
 
