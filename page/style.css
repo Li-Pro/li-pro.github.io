@@ -1,14 +1,13 @@
 .main-navbar
 {
-	min-height: 10%;
-	max-height: 10%;
+	min-height: 70px;
 }
 
 .lipro-code
 {
 	font-family: consolas;
 	font-size: 30px;
-	padding-top: 5%;
+	padding-top: 70px;
 }
 
 .coding-cursor
