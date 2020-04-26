@@ -17,14 +17,14 @@ function doTypeWriting(arr, arri, arrj, ele, linesprf='', prf='')
 		linesprf += hljs.highlight('cpp', prf).value + ' <br>';
 		ele.innerHTML = linesprf + '<span class="coding-cursor"></span>';
 		
-		setTimeout(()=>{ doTypeWriting(arr, arri+1, 0, ele, linesprf, ''); }, 50);
+		setTimeout(()=>{ doTypeWriting(arr, arri+1, 0, ele, linesprf, ''); }, 30);
 	}
 	else
 	{
 		prf += arrx[arrj]; // <pre> reserve whitepaces
 		ele.innerHTML = linesprf + hljs.highlight('cpp', prf).value + '<span class="coding-cursor"></span>';
 		
-		setTimeout(()=>{ doTypeWriting(arr, arri, arrj+1, ele, linesprf, prf); }, 50);
+		setTimeout(()=>{ doTypeWriting(arr, arri, arrj+1, ele, linesprf, prf); }, 30);
 	}
 }
 
