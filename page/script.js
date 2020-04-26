@@ -20,8 +20,6 @@ function doTypeWriting(arr, arri, arrj, ele, linesprf='', prf='')
 	if (arri >= len)
 	{
 		ele.innerHTML = linesprf + '<span class="code-cursor"></span>';
-		
-		// hljs.highlightBlock()
 		return;
 	}
 	
@@ -30,14 +28,20 @@ function doTypeWriting(arr, arri, arrj, ele, linesprf='', prf='')
 	
 	if (arrj >= lenx)
 	{
-		// prf += ' <br>';
-		ele.innerHTML = linesprf + hljs.highlight('cpp', prf).value + ' <br>' + '<span class="coding-cursor"></span>';
+		linesprf += hljs.highlight('cpp', prf).value + ' <br>';
+		ele.innerHTML = linesprf + '<span class="coding-cursor"></span>';
 		
-		setTimeout(()=>{ doTypeWriting(arr, arri+1, 0, ele, linesprf + hljs.highlight('cpp', prf).value + ' <br>', ''); }, 50);
+		setTimeout(()=>{ doTypeWriting(arr, arri+1, 0, ele, linesprf, ''); }, 50);
 	}
 	else
 	{
-		prf += arrx[arrj]; // escapeHtml(arrx[arrj]);
+		if (arrx[arrj] == '\t')
+		{
+			linesprf += hljs.highlight('cpp', prf).value + '&emsp;&emsp;';
+			prf = '';
+		}
+		else prf += arrx[arrj];
+		
 		ele.innerHTML = linesprf + hljs.highlight('cpp', prf).value + '<span class="coding-cursor"></span>';
 		
 		setTimeout(()=>{ doTypeWriting(arr, arri, arrj+1, ele, linesprf, prf); }, 50);
