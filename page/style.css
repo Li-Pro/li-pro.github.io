@@ -1,60 +1,31 @@
 .main-navbar
 {
-	width: 100%;
+	min-height: 10%;
+	max-height: 10%;
 }
 
-.main-content
+.lipro-code
 {
-	display: block;
-	overflow: hidden;
+	font-family: consolas;
+	font-size: 30px;
+	padding-top: 5%;
 }
 
-/* Typewriting: https://css-tricks.com/snippets/css/typewriter-effect/ */
-/*
-.typewriter
+.coding-cursor
 {
-	width: 3em;
-	overflow: hidden;
-	border-right: .15em solid black;
-	white-space: nowrap;
-	margin: 0 auto;
-	animation:
-		typing 6s steps(6, end),
-		blink-cursor 800ms step-end infinite;
+	padding: 1px;
+	border-right: .1em solid black;
 }
 
-@keyframes typing
+.code-cursor
 {
-	from { width: 0; }
-	to { width: 3em; }
+	padding: 1px;
+	border-right: .1em solid black;
+	animation: blink-cursor .5s step-end infinite;
 }
 
 @keyframes blink-cursor
 {
-	from, to { border-color: rgba(255, 255, 255, .75); }
-	50% { border-color: transparent; }
-}
-*/
-
-.line-1{
-    width: 19em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(0,0,0,.75);
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-/* Animation */
-.anim-typewriter{
-  animation: typewriter 44s steps(44),
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 19em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(0,0,0,.75);}
-  to{border-right-color: transparent;}
+	from, to { border-color: transparent; }
+	50% { border-color: black; }
 }
