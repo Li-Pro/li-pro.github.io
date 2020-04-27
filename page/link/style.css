@@ -1,4 +1,31 @@
+@font-face
+{
+	font-family: 'Museo300R';
+	src: url('/assets/Museo300-Regular-webfont.woff2') format('woff2'),
+         url('/assets/Museo300-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+	font-family: 'Museo300R', Helvetica, serif;
+}
+
 .main-navbar
 {
 	min-height: 70px;
+}
+
+.main-link:hover
+{
+	border-bottom: 1px solid gray;
+	/*animation:
+		selected .75s linear infinite;*/
+	transform: scale(1.2);
+}
+
+@keyframes selected
+{
+	50% {transform: scale(1.2);}
 }
