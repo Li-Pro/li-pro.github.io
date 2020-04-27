@@ -36,6 +36,7 @@ function initTypeWriter()
 		"using namespace std;",
 		"",
 		"#define int long long",
+		"",
 		"#ifdef lioraju",
 		"	#define ndbg(x) ",
 		"#else",
