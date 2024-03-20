@@ -1,3 +1,4 @@
+<!--  -->
 <!doctype html>
 <html>
 	<head>
@@ -5,23 +6,46 @@
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css" integrity="sha256-s47mXWRWvrLQNL9VRQX0ykfkIVSLfNJuingF/SZztsM=" crossorigin="anonymous">
-		
-		<link href="/modules/highlight/styles/vs.css" rel="stylesheet">
-		
-		<link href="style.css" rel="stylesheet">
+		<link href="index.css" rel="stylesheet">
 	</head>
 
-    <body>
-        <div id="aniimated-thumbnials">
-            <a href="res/Apple_iPad_Pro.usdz">
-              <img src="res/Apple_iPad_Pro.png" />
-            </a>
-            <a href="res/Bench_the_chair_Wood.usdz">
-              <img src="res/Bench_the_chair_Wood.png" />
-            </a>
-          </div>
-        <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js" integrity="sha256-0Zhc9IDI5elFpwJZlvdAM4u/6qlxi4qIOUlHDVl5wjU=" crossorigin="anonymous"></script>
+    <body class="home">
+        <div class="demo-gallery">
+            <ul id="lightgallery" class="list-unstyled row">
+                <li class="col-xs-6 col-sm-4 col-md-3" data-src="res/Apple_iPad_Pro.png" data-download-url="false">
+                    <a href="">
+                        <img class="img-responsive" src="res/Apple_iPad_Pro.png" alt="Apple iPad Pro">
+                    </a>
+                </li>
+                <li class="col-xs-6 col-sm-4 col-md-3" data-src="res/Bench_the_chair_Wood.png" data-download-url="false">
+                    <a href="">
+                        <img class="img-responsive" src="res/Bench_the_chair_Wood.png" alt="Bench the chair Wood">
+                    </a>
+                </li>
+                <li class="col-xs-6 col-sm-4 col-md-3" data-src="res/Chair_table_Sofa_in_Art_Deco_style.png" data-download-url="false">
+                    <a href="">
+                        <img class="img-responsive" src="res/Chair_table_Sofa_in_Art_Deco_style.png" alt="Chair table Sofa in Art Deco style">
+                    </a>
+                </li>
+                <li class="col-xs-6 col-sm-4 col-md-3" data-src="res/Computer_Monitor.png" data-download-url="false">
+                    <a href="">
+                        <img class="img-responsive" src="res/Computer_Monitor.png" alt="Computer Monitor">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lg-rotate@1.2.1/dist/lg-rotate.min.js" integrity="sha256-6QnkxpTh67yTrfTqcZwZMrnuPKWC+s+m4kXC+aczCvM=" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
     </body>
 </html>
