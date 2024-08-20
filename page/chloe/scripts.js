@@ -99,7 +99,7 @@ async function onShareClicked(_event) {
   const date = now.getDate().toString().padStart(2, "0");
 
   let wordNodes = document.getElementById("task-list").children;
-  let words = Array.from(wordNodes).map((node) => node.textContent);
+  let words = Array.from(wordNodes).map((node) => node.childNodes[0].textContent);
 
   let wordText = wordListNote(`${month}/${date}`, words);
   let blob = new Blob([wordText], { type: 'application/xml' });
