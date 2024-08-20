@@ -67,13 +67,33 @@ async function onSearchClicked(event) {
 }
 
 function wordListNote(title, words) {
-  let textWords = Array.from(words.entries()).map(
-    ([widx, word]) => `\t${widx + 1}.\t${word}`
-  );
-  return `${title}\n${textWords}`;
+  let textWords = Array.from(
+    words.map((word) => `<li><div>${word}</div></li>`)
+  ).join("\n");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-export SYSTEM "http://xml.evernote.com/pub/evernote-export4.dtd">
+<en-export export-date="20240820T161339Z" application="Evernote" version="10.101.5">
+  <note>
+    <title>${title}</title>
+    <created>20240820T160822Z</created>
+    <updated>20240820T161314Z</updated>
+    <content>
+      <![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+        <en-note>
+          <ol>
+            ${textWords}
+          </ol>
+        </en-note>
+      ]]>
+    </content>
+  </note>
+</en-export>
+`;
 }
 
-async function onShareClicked(event) {
+async function onShareClicked(_event) {
   const now = new Date();
   const month = (now.getMonth() + 1).toString().padStart(2, "0");
   const date = now.getDate().toString().padStart(2, "0");
