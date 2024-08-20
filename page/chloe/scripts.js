@@ -66,6 +66,13 @@ async function onSearchClicked(event) {
   }
 }
 
+function wordListNote(title, words) {
+  let textWords = Array.from(words.entries()).map(
+    ([widx, word]) => `\t${widx + 1}.\t${word}`
+  );
+  return `${title}\n${textWords}`;
+}
+
 async function onShareClicked(event) {
   const now = new Date();
   const month = (now.getMonth() + 1).toString().padStart(2, "0");
@@ -73,10 +80,9 @@ async function onShareClicked(event) {
 
   let wordNodes = document.getElementById("task-list").children;
   let words = Array.from(wordNodes).map((node) => node.textContent);
-  let wordText = "1. " + words.join("\n");
 
+  let wordText = wordListNote(`${month}/${date}`, words);
   navigator.share({
-    title: `${month}/${date}`,
     text: wordText,
   });
 }
