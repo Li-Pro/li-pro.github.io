@@ -102,8 +102,10 @@ async function onShareClicked(_event) {
   let words = Array.from(wordNodes).map((node) => node.textContent);
 
   let wordText = wordListNote(`${month}/${date}`, words);
+  let blob = new Blob([wordText], { type: 'application/xml' });
+  let file = new File([blob], "words.enex", {type: "application/xml"});
   navigator.share({
-    text: wordText,
+    files: [file]
   });
 }
 
