@@ -73,11 +73,12 @@ function wordListNote(title, words) {
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE en-export SYSTEM "http://xml.evernote.com/pub/evernote-export4.dtd">
-<en-export export-date="20240820T161339Z" application="Evernote" version="10.101.5">
+<en-export>
   <note>
     <title>${title}</title>
-    <created>20240820T160822Z</created>
-    <updated>20240820T161314Z</updated>
+    <note-attribute>
+      <place-name>Notes</place-name>
+    </note-attribute>
     <content>
       <![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
@@ -99,13 +100,18 @@ async function onShareClicked(_event) {
   const date = now.getDate().toString().padStart(2, "0");
 
   let wordNodes = document.getElementById("task-list").children;
-  let words = Array.from(wordNodes).map((node) => node.childNodes[0].textContent);
+  let words = Array.from(wordNodes).map(
+    (node) => node.childNodes[0].textContent
+  );
 
   let wordText = wordListNote(`${month}/${date}`, words);
-  let blob = new Blob([wordText], { type: 'application/xml' });
-  let file = new File([blob], "words.enex", {type: "application/xml"});
+  let blob = new Blob([wordText], { type: "application/xml" });
+  let file = new File([blob], `words ${month}${date}.enex`, {
+    type: "application/xml",
+  });
+
   navigator.share({
-    files: [file]
+    files: [file],
   });
 }
 
