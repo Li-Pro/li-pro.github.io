@@ -75,6 +75,20 @@ li.word-item {
     align-items: center;
 }
 
+li .select-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+li .select-btn:hover {
+    background-color: #218838;
+}
+
 li .delete-btn {
     background-color: #dc3545;
     color: #fff;

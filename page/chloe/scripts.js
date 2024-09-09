@@ -164,6 +164,20 @@ async function onSearchClicked(event) {
     taskSpan.textContent = desc_def(def);
     li.appendChild(taskSpan);
 
+    // Create delete button
+    const selectBtn = document.createElement("button");
+    selectBtn.textContent = "Select";
+    selectBtn.classList.add("select-btn");
+    li.appendChild(selectBtn);
+
+    selectBtn.addEventListener(
+      "click",
+      () => {
+        word_ctnr.querySelector(".word-repr").children[0].textContent = taskSpan.textContent;
+      }
+    )
+
+    li.style.display = "none";
     word_ctnr.appendChild(li);
   }
 
