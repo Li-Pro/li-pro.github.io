@@ -75,6 +75,11 @@ li.word-item {
     align-items: center;
 }
 
+li .word-item-pad {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 li .select-btn {
     background-color: #28a745;
     color: #fff;
@@ -82,7 +87,7 @@ li .select-btn {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 10px;
 }
 
 li .select-btn:hover {
@@ -110,8 +115,7 @@ li .edit-btn {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: auto;
-    /* margin-right: 10px; */
+    margin-left: 10px;
 }
 
 li .edit-btn:hover {
