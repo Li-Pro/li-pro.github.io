@@ -164,7 +164,6 @@ async function onSearchClicked(event) {
     taskSpan.textContent = desc_def(def);
     li.appendChild(taskSpan);
 
-    // li.appendChild(subitemsContainer);
     word_ctnr.appendChild(li);
   }
 
@@ -222,30 +221,12 @@ async function onSearchClicked(event) {
 
 function wordListNote(title, words) {
   let textWords = Array.from(
-    words.map((word) => `<li><div>${word}</div></li>`)
+    Array
+      .from(words.entries())
+      .map(([id, word]) => ` ${id + 1}. ${word}`)
   ).join("\n");
 
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE en-export SYSTEM "http://xml.evernote.com/pub/evernote-export4.dtd">
-<en-export>
-  <note>
-    <title>${title}</title>
-    <note-attribute>
-      <place-name>Notes</place-name>
-    </note-attribute>
-    <content>
-      <![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-        <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
-        <en-note>
-          <ol>
-            ${textWords}
-          </ol>
-        </en-note>
-      ]]>
-    </content>
-  </note>
-</en-export>
-`;
+  return `${title}\n${textWords}`;
 }
 
 async function onShareClicked(_event) {
@@ -254,16 +235,11 @@ async function onShareClicked(_event) {
   const date = now.getDate().toString().padStart(2, "0");
 
   let wordNodes = document.getElementById("task-list").children;
-  let words = Array.from(wordNodes).map((node) => node.children[0].textContent);
+  let words = Array.from(wordNodes).map((node) => node.children[0].children[0].textContent);
 
   let wordText = wordListNote(`${month}/${date}`, words);
-  let blob = new Blob([wordText], { type: "application/xml" });
-  let file = new File([blob], `words ${month}${date}.enex`, {
-    type: "application/xml",
-  });
-
   navigator.share({
-    files: [file],
+    text: wordText
   });
 }
 

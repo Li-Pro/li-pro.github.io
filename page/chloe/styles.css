@@ -103,22 +103,3 @@ li .edit-btn {
 li .edit-btn:hover {
     background-color: #0069d9;
 }
-
-.subitems {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-.subitems input[type="text"] {
-    margin-bottom: 10px;
-
-    /* Adjust width to account for padding */
-    width: calc(100% - 24px);
-}
-
-.subitems input,
-.subitems button {
-    margin-top: 5px;
-    display: block;
-    width: 100%;
-}
