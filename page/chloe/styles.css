@@ -55,7 +55,17 @@ ul {
     padding: 0;
 }
 
-li {
+li.word-container {
+    /* background-color: #f9f9f9; */
+    /* margin-bottom: 10px; */
+    padding: 0px;
+    /* border-radius: 5px; */
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.word-item {
     background-color: #f9f9f9;
     margin-bottom: 10px;
     padding: 10px;
@@ -70,11 +80,45 @@ li .delete-btn {
     color: #fff;
     border: none;
     padding: 5px 10px;
-    margin-left: 20px;
+    /* margin-left: 10px; */
     border-radius: 5px;
     cursor: pointer;
 }
 
 li .delete-btn:hover {
     background-color: #c82333;
+}
+
+li .edit-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    /* margin-right: 10px; */
+}
+
+li .edit-btn:hover {
+    background-color: #0069d9;
+}
+
+.subitems {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.subitems input[type="text"] {
+    margin-bottom: 10px;
+
+    /* Adjust width to account for padding */
+    width: calc(100% - 24px);
+}
+
+.subitems input,
+.subitems button {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
 }
